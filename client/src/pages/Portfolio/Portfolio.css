@@ -1,0 +1,230 @@
+:root {
+  --color-heading: #008a3a;
+}
+body.dark {
+  --color-heading: #00ff88;
+}
+
+.portfolio {
+  padding: 2rem;
+  background-color: var(--color-bg);
+  min-height: calc(100vh - 64px);
+  color: var(--color-text);
+}
+
+.portfolio-header {
+  margin-bottom: 2rem;
+}
+
+.portfolio-header h1 {
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.portfolio-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--color-bg-card);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  color: var(--color-heading);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.balance {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.change {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.change.positive {
+  color: var(--color-success);
+}
+
+.change.negative {
+  color: var(--color-error);
+}
+
+.portfolio-content {
+  background: var(--color-bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-content h2 {
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.portfolio-content table {
+    margin-left: 35px;
+}
+
+.portfolio-content table th tr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.holdings-table {
+  width: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  color: #666;
+  padding: 3rem 0;
+  font-size: 1.1rem;
+}
+
+.crypto-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.2rem;
+}
+.badge-card {
+  background: #23272f;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.badge-card.locked {
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+.badge-name {
+  font-size: 0.97rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #00ff88;
+  text-align: center;
+  width: 100%;
+}
+.badge-card.locked .badge-name {
+  color: #888;
+}
+.badge-desc {
+  font-size: 0.91rem;
+  color: #b0b8c1;
+  margin-top: 0.2rem;
+  text-align: center;
+  width: 100%;
+}
+.badge-card svg {
+  font-size: 1.5rem !important;
+}
+
+.badge-toast {
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #23272f;
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  max-width: 90vw;
+  padding: 1.1rem 1.5rem 1.1rem 1.1rem;
+  z-index: 2000;
+  animation: badge-toast-fadein 0.3s;
+}
+@keyframes badge-toast-fadein {
+  from { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.badge-toast-icon {
+  margin-right: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+.badge-toast-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.badge-toast-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #00ff88;
+}
+.badge-toast-name {
+  font-size: 1.01rem;
+  font-weight: 600;
+}
+.badge-toast-desc {
+  font-size: 0.97rem;
+  color: #b0b8c1;
+}
+.badge-toast-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+.badge-toast-close:hover {
+  color: #ff1744;
+}
+
+@media (max-width: 700px) {
+  .portfolio {
+    padding: 0.5rem;
+  }
+  .portfolio-header h1 {
+    font-size: 1.3rem;
+  }
+  .portfolio-content {
+    padding: 1rem 0.5rem;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .holdings-table th, .holdings-table td {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .badges-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+} 
