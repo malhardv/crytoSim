@@ -68,7 +68,7 @@ export const PortfolioProvider = ({ children }) => {
   const fetchPortfolio = async () => {
     const token = localStorage.getItem('token');
     if (!token) return;
-    const response = await fetch('http://localhost:5000/api/portfolio', {
+    const response = await fetch('https://cryto-sim-qeew.vercel.app/api/portfolio', {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if (response.ok) {
@@ -85,7 +85,7 @@ export const PortfolioProvider = ({ children }) => {
 
   const buyCrypto = async (crypto, amount) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/portfolio/buy', {
+    const response = await fetch('https://cryto-sim-qeew.vercel.app/api/portfolio/buy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ export const PortfolioProvider = ({ children }) => {
 
   const sellCrypto = async (crypto, amount) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/portfolio/sell', {
+    const response = await fetch('https://cryto-sim-qeew.vercel.app/api/portfolio/sell', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
