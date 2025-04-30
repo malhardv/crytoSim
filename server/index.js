@@ -5,6 +5,10 @@ const dotenv = require('dotenv');
 
 // Load environment variables
 dotenv.config();
+console.log('Environment variables loaded:', { 
+    hasJwtSecret: !!process.env.JWT_SECRET,
+    nodeEnv: process.env.NODE_ENV 
+});
 
 const app = express();
 
