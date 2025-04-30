@@ -9,7 +9,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await fetch('https://cryto-sim-qeew.vercel.app/api/leaderboard');
+        const res = await fetch('https://crytosim1.onrender.com/api/leaderboard');
         if (!res.ok) throw new Error('Failed to fetch leaderboard');
         const data = await res.json();
         setLeaderboard(data);

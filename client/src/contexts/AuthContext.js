@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
             if (token) {
                 try {
-                    const response = await fetch('https://cryto-sim-qeew.vercel.app/api/auth/me', {
+                    const response = await fetch('https://crytosim1.onrender.com/api/auth/me', {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }

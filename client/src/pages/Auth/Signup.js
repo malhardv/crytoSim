@@ -28,7 +28,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch('https://cryto-sim-qeew.vercel.app/api/auth/register', {
+      const response = await fetch('https://crytosim1.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
